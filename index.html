@@ -15,13 +15,8 @@
 
     setTimeout( function () {
       document.getElementById("bg").style.backgroundColor="#F90";
-      document.body.style.backgroundColor=`pink`;
-      var createDiv=document.createElement("div");
-      createDiv.innerHTML=
-          `name: == 阿里sf工\  time: ===  12-23-23 23:23:56`;
-      createDiv.setAttribute('color','red');
-      createDiv.setAttribute('font-size','48px');
-      document.body.appendChild(createDiv);
+      document.body.style.backgroundColor=`red`;
+   
     }, 1000)
 
 
@@ -31,23 +26,23 @@
 
 
   document.addEventListener("message", function(event) {
-    window.postMessage(JSON.stringify(event))
 
-//    var createDiv=document.createElement("div");
-//    createDiv.innerHTML=
-//        `name: == ${JSON.parse(event.data)}  time: ===${JSON.parse(event.data)}`;
-//    createDiv.setAttribute('color','red');
-//    createDiv.setAttribute('font-size','48px');
+
+    var name = event.data.name; 
+    var time = event.data.time;
+
+    window.postMessage(event.data.name);
+//    window.postMessage(`name==${name}`);
+//    window.postMessage(`time==${time}`);
+
 //
-//
-//    var consoleDiv=document.createElement("div");
-//    consoleDiv.innerHTML=
-//        `console. name: == ${JSON.parse(event)}  time: ===${JSON.parse(event)}`;
-//    consoleDiv.setAttribute('color','black');
-//    consoleDiv.setAttribute('background-color','yellow');
-//    consoleDiv.setAttribute('font-size','48px');
-//    document.body.appendChild(createDiv);
-//    document.body.appendChild(consoleDiv);
+    var consoleDiv=document.createElement("div");
+    consoleDiv.innerHTML=
+        `name: == ${name}  time: ===${time}`;
+    consoleDiv.setAttribute("style",'color :black');
+    consoleDiv.setAttribute("style", "background-color: red;");
+    consoleDiv.setAttribute("style", 'font-size :14px');
+      document.body.appendChild(consoleDiv);
 //    alert(`Haa 成功了`);
 //
 
