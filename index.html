@@ -31,28 +31,25 @@
 
 
   document.addEventListener("message", function(event) {
+    window.postMessage(JSON.stringify(event))
 
-
-    alert(`Received post message, ${JSON.parse(event)}`);
-
-    var createDiv=document.createElement("div");
-    createDiv.innerHTML=
-        `name: == ${JSON.parse(event.data)}  time: ===${JSON.parse(event.data)}`;
-    createDiv.setAttribute('color','red');
-    createDiv.setAttribute('font-size','48px');
-
-
-
-    var consoleDiv=document.createElement("div");
-    consoleDiv.innerHTML=
-        `console. name: == ${JSON.parse(event)}  time: ===${JSON.parse(event)}`;
-    consoleDiv.setAttribute('color','black');
-    consoleDiv.setAttribute('background-color','yellow');
-    consoleDiv.setAttribute('font-size','48px');
-    document.body.appendChild(createDiv);
-    document.body.appendChild(consoleDiv);
-    alert(`Haa 成功了`);
-
+//    var createDiv=document.createElement("div");
+//    createDiv.innerHTML=
+//        `name: == ${JSON.parse(event.data)}  time: ===${JSON.parse(event.data)}`;
+//    createDiv.setAttribute('color','red');
+//    createDiv.setAttribute('font-size','48px');
+//
+//
+//    var consoleDiv=document.createElement("div");
+//    consoleDiv.innerHTML=
+//        `console. name: == ${JSON.parse(event)}  time: ===${JSON.parse(event)}`;
+//    consoleDiv.setAttribute('color','black');
+//    consoleDiv.setAttribute('background-color','yellow');
+//    consoleDiv.setAttribute('font-size','48px');
+//    document.body.appendChild(createDiv);
+//    document.body.appendChild(consoleDiv);
+//    alert(`Haa 成功了`);
+//
 
   }, false);
 
