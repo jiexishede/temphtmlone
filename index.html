@@ -15,11 +15,10 @@
 
     setTimeout( function () {
       document.getElementById("bg").style.backgroundColor="#F90";
-      document.body.style.backgroundColor=`red`;
-   
+      document.body.style.backgroundColor=`orange`;
+
+
     }, 1000)
-
-
 
   }
 
@@ -28,14 +27,14 @@
   document.addEventListener("message", function(event) {
 
 
-    var name = event.data.name; 
-    var time = event.data.time;
+    var TEMstirngOBJ  = JSON.parse(event.data);
 
-    window.postMessage(event.data.name);
-//    window.postMessage(`name==${name}`);
-//    window.postMessage(`time==${time}`);
 
-//
+    var name = TEMstirngOBJ.name;
+    var time = TEMstirngOBJ.time;
+
+    window.postMessage("uiuoou");
+
     var consoleDiv=document.createElement("div");
     consoleDiv.innerHTML=
         `name: == ${name}  time: ===${time}`;
