@@ -16,6 +16,12 @@
     setTimeout( function () {
       document.getElementById("bg").style.backgroundColor="#F90";
       document.body.style.backgroundColor=`green`;
+      var createDiv=document.createElement("div");
+      createDiv.innerHTML=
+          `name: == 阿里sf工\  time: ===  12-23-23 23:23:56`;
+      createDiv.setAttribute('color','red');
+      createDiv.setAttribute('font-size','48px');
+      document.body.appendChild(createDiv);
     }, 1000)
 
 
@@ -30,7 +36,13 @@
 
   document.addEventListener("message", function(event) {
     console.log("Received post message", event);
-    alert(`成功了`);
+
+    var createDiv=document.createElement("div");
+    createDiv.innerHTML=
+        `name: == ${event.data.name}  time: ===${event.data.time}`;
+    createDiv.setAttribute('color','red');
+    createDiv.setAttribute('font-size','48px');
+    document.body.appendChild(createDiv);
 
   }, false);
 
