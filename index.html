@@ -31,7 +31,9 @@
 
 
   document.addEventListener("message", function(event) {
-    console.log("Received post message", JSON.parse(event));
+
+
+    alert(`Received post message, ${JSON.parse(event)}`);
 
     var createDiv=document.createElement("div");
     createDiv.innerHTML=
@@ -49,6 +51,8 @@
     consoleDiv.setAttribute('font-size','48px');
     document.body.appendChild(createDiv);
     document.body.appendChild(consoleDiv);
+    alert(`Haa 成功了`);
+
 
   }, false);
 
